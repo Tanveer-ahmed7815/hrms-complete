@@ -1,0 +1,75 @@
+server:
+  port: 8143
+  
+spring:
+  jackson:
+    mapper:
+      default-view-inclusion: true
+    serialization:
+      write-date-keys-as-timestamps: false  
+
+  mvc:
+    throw-exception-if-no-handler-found: true
+    
+    
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: flinko.app@gmail.com
+    password: aoqpdxpbgsnjswev
+    port: 587
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
+
+sms:
+  api-key: v9KCWaYPOVuxBslNjzZi5q4L1eJEX8kd3Ffm0TDSrUb26QIHgpuIkm8rZHwXtTpCyqRDMiN0dcUs2LVB
+  send-id: FTWSMS
+  language: english
+  route: q
+
+amazonProperties:
+   endpointUrl: https://hrms-prod-s3-bucket.s3.ap-south-1.amazonaws.com/hrms-backend/
+   accessKey: AKIAQNSTOCFO63SIRQRN
+   secretKey: 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
+   bucketName: hrms-prod-s3-bucket
+   region: ap-south-1
+      
+logo:
+  star0: public/reports/star0.png
+  star1: public/reports/star1.png
+  star2: public/reports/star2.png
+  star3: public/reports/star3.png
+  star4: public/reports/star4.png
+  star5: public/reports/star5.png
+  star6: public/reports/star6.png
+  star7: public/reports/star7.png
+  star8: public/reports/star8.png
+  star9: public/reports/star9.png
+  star10: public/reports/star10.png
+
+      
+auth:
+  app:
+    jwt-secret: 5468576D597133743677397A24432646294A404E635266556A586E327234753778214125442A472D4B6150645367566B59703373367638792F423F4528482B4D
+    jwt-expiration-ms: 86400000 #24*60*60*1000
+    jwt-refresh-ms: 1296000000  # 15*24*60*60*1000
+    jwt-not-before-ms: 10
+    
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,refresh
+        
+  endpoint:
+    env:
+      post:
+        enabled: true
+      
